@@ -1,0 +1,18 @@
+Mephisto Userlogin Plugin
+by: Semantosoph (sven@semantosoph.net)
+=========================================
+
+This little plugin provides you with a protected area for your users on your mephisto blog. Its built to use engines compatible mephisto available in the mephisto version 8.2.
+
+To install this plugin, run:
+
+script/generate plugin_migration
+rake db:migrate RAILS_ENV=production
+
+This will make some changes to your production database and will expose a new Userlogin tab to your Mephisto administration interface. From there you can create new userlogins. When creating new userlogins
+provide a username and a password (Attention! This is designed for ease of use and easy remebering. The passwords are NOT ENCRYPTED! Don't use this for really important stuff) along with some sites you like 
+to provide inside of the protected area. You need to create a liquid template for every site you list as protected. So, if you list "family_gallery" as a protected site, you need to create a template 
+called "family_gallery.liquid". This page will be available at http://yoursite.com/protected/family_galery. The page http://yoursite.com/protected will show a login form (if not logged in)
+or the conten of "protected_index.liquid" (otherwise).
+
+
