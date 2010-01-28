@@ -1,0 +1,5 @@
+<tr id="userlogin_<%= userlogin.id %>">
+  <td><%= link_to(h(userlogin.login), {:action => 'edit', :id => userlogin}) %></td>
+  <td><%= h(userlogin.password) %></td>
+  <td><%= h(userlogin.sites) %></td>
+</tr>

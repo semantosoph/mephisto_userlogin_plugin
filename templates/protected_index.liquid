@@ -1,0 +1,13 @@
+<h1>Welcome {{user.login}}</h1>
+
+<p>
+  You may access the following sites
+  <ul>
+    {% for page in user.pages %}
+      <li><a href="/protected/{{ page }}">{{ page | replace:'_',' ' | capitalize }}</a></li>
+    {% endfor %}
+  </ul>
+</p>
+<p>
+  <a href="/logout">Logout</a>
+</p>

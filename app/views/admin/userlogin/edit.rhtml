@@ -1,0 +1,21 @@
+<% content_for :action_nav do -%>
+  <div id="page-nav">
+   <ul id="act-nav" class="clear">
+<li><%= link_to "Remove this Userlogin", {:action => "destroy", :id => @userlogin.id}, :method => 'delete', :confirm => 'Are your sure you want to remove this userlogin?' %></li>
+</ul>
+  </div>
+<% end %>
+
+<% content_for :form do -%>
+  <%= form_tag({:action => 'update', :id => @userlogin.id}, {:id => 'userlogin-form', :multipart => true}) %>
+<% end -%>
+ 
+<% fields_for :userlogin do |f| -%>
+  <%= render :partial => 'form', :object => f %>
+  
+  <p class="btns">
+    <%= submit_tag 'Update Userlogin' %> or
+    <%= link_to "Cancel", :controller => "userlogin" %>
+  </p>
+<% end -%>
+ 

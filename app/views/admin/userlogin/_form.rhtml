@@ -1,0 +1,15 @@
+<%= error_messages_for 'album' %>
+<!-- begin required fields -->
+<div class="group">
+  <dl>
+    <dt><label for="userlogin_login">Login</label></dt>
+    <dd><%= form.text_field :login, :class => 'big' %></dd>
+
+    <dt><label for="password">Password</label></dt>
+    <dd><%= form.text_field :password, :class => 'big' %></dd>
+
+    <dt><label for="sites">Sites to protect</label></dt><span class="hint">Enter one or more sites separated by a comma (for example <em>gallery, private_site, secret</em>)</span>
+    <dd><%= form.text_field :sites, :class => 'big' %></dd>
+  </dl>
+</div>
+<!-- /end required fields -->

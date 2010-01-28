@@ -1,0 +1,17 @@
+<% content_for :action_nav do -%>
+  <div id="page-nav"></div>
+<% end %>
+ 
+<% content_for :form do -%>
+  <%= form_tag({:action => 'create'}, {:id => 'userlogin-form'}) %>
+<% end -%>
+ 
+<% fields_for :userlogin do |f| -%>
+  <%= render :partial => 'form', :object => f %>
+  
+  <p class="btns">
+    <%= submit_tag 'Create Userlogin' %> or
+    <%= link_to "Cancel", :controller => "userlogin" %>
+  </p>
+<% end -%>
+ 
